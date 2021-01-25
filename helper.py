@@ -19,6 +19,7 @@ retry_strategy = Retry(
 
 
 # To set default timeout parameter for our scrapper
+# Refer: https://findwork.dev/blog/advanced-usage-python-requests-timeouts-retries-hooks/#request-hooks
 class WikiTimeOutHTTPAdapter(HTTPAdapter):
     def __init__(self, *args, **kwargs):
         self.timeout = DEFAULT_TIMEOUT
