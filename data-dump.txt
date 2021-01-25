@@ -1,54 +1,41 @@
-Republic of Zimbabwe, 13 other official names, Shona, :, Nyika yeZimbabwe, Ndebele, :, Ilizwe leZimbabwe, Chewa, :, Dziko la Zimbabwe, Chibarwe, :, Dziko la Zimbabwe, Kalanga, :, Hango yeZimbabwe, Khoisan, :, Zimbabwe Nù, Nambya, :, Inyika yeZimbabwe, Ndau, :, Nyika yeZimbabwe, Shangani, :, Tiko ra Zimbabwe, Sesotho, :, Naha ya Zimbabwe, Tonga, :, Cisi ca Zimbabwe, Venda, :, Shango ḽa Zimbabwe, Xhosa, :, Ilizwe lase-Zimbabwe: Nyika yeZimbabwe
-Shona, :: Nyika yeZimbabwe
-Ndebele, :: Ilizwe leZimbabwe
-Chewa, :: Dziko la Zimbabwe
-Chibarwe, :: Dziko la Zimbabwe
-Kalanga, :: Hango yeZimbabwe
-Khoisan, :: Zimbabwe Nù
-Nambya, :: Inyika yeZimbabwe
-Ndau, :: Nyika yeZimbabwe
-Shangani, :: Tiko ra Zimbabwe
-Sesotho, :: Naha ya Zimbabwe
-Tonga, :: Cisi ca Zimbabwe
-Venda, :: Shango ḽa Zimbabwe
-Xhosa, :: Ilizwe lase-Zimbabwe
-Capital, and largest city: Harare, 17°50′S, 31°3′E, ﻿ / ﻿, 17.833°S 31.050°E, ﻿ /, -17.833; 31.050
-Official languages: 16 languages, :, [3], Chewa, Chibarwe, English, Kalanga, ", Koisan, " (presumably, Tsoa, ), Nambya, Ndau, Ndebele, Shangani, Shona, ", sign language, ", Sotho, Tonga, Tswana, Venda, Xhosa
-Ethnic groups, (2012 Census, [4], ): 99.38%, Black African, (mainly, Shona, and, Ndebele, ), 0.22%, White African, 0.18%, Coloured, 0.08%, Asian, 0.02% Other, 0.01% Not Stated
-Religion, (2017), [5]: 84.1%, Christianity, —69.2%, Protestantism, —14.9% Other, Christian, 10.2%, No religion, 4.5%, Traditional faiths, 1.2% Others
-Demonym(s): Zimbabwean, Zimbo, [6], (colloquial)
-Government: Unitary, dominant-party, presidential, constitutional republic
-•, President: Emmerson Mnangagwa
-•, Vice-Presidents: Constantino Chiwenga, Kembo Mohadi
-Legislature: Parliament
-•, Upper house: Senate
-•, Lower house: National Assembly
-Independence, .mw-parser-output .nobold{font-weight:normal}, from the United Kingdom
-•, Declared: 11 November 1965
-•, Republic: 2 March 1970
-•, Zimbabwe Rhodesia: 1 June 1979
-• Republic of Zimbabwe: 18 April 1980
-•, Current constitution: 15 May 2013
+Capital: Brasília, 15°47′S, 47°52′W, ﻿ / ﻿, 15.783°S 47.867°W, ﻿ /, -15.783; -47.867
+Largest city: São Paulo, 23°33′S, 46°38′W, ﻿ / ﻿, 23.550°S 46.633°W, ﻿ /, -23.550; -46.633
+Official language, .mw-parser-output .nobold{font-weight:normal}, and national language: Portuguese, [2]
+Ethnic groups, (2010), [3]: 47.73%, White, [nt 1], 43.13%, Mixed, [nt 2], 7.61%, Black, 1.09%, Asian, [nt 3], 0.43%, Indigenous
+Religion, (2010), [4], [5]: 88.8%, Christianity, —64.6%, Roman Catholic, —22.2%, Protestant, —2.0% Other, Christian, 8.0%, No religion, 2.0%, Spiritism, 1.2% Other, religions
+Demonym(s): Brazilian
+Government: Federal, presidential, constitutional, republic
+•, President: Jair Bolsonaro
+•, Vice President: Hamilton Mourão
+•, President of the, Chamber of Deputies: Rodrigo Maia
+•, President of the, Federal Senate: Davi Alcolumbre
+•, President of the, Supreme Federal Court: Luiz Fux
+Legislature: National Congress
+•, Upper house: Federal Senate
+•, Lower house: Chamber of Deputies
+Independence, from the, United Kingdom of Portugal, Brazil and the Algarves
+•, Declared: 7 September 1822
+•, Recognized: 29 August 1825
+•, Republic: 15 November 1889
+•, Current constitution: 5 October 1988
 Area
-• Total: 390,757 km, 2, (150,872 sq mi) (, 60th, )
-• Water (%): 1
+• Total: 8,515,767 km, 2, (3,287,956 sq mi) (, 5th, )
+• Water (%): 0.65
 Population
-• 2019 estimate: 14,215,809, [7], (, 74th, )
-• 2012 census: 12,973,808, [8]
-• Density: 26/km, 2, (67.3/sq mi) (, 170th, )
-GDP, (, PPP, ): 2019 estimate
-• Total: $41.031 billion
-• Per capita: $2,621, [9]
-GDP, (nominal): 2019 estimate
-• Total: $22.290 billion
-• Per capita: $1,424, [9]
-Gini, (1995): 50.1, [10], high
-HDI, (2019): 0.571, [11], medium, ·, 150th
-Currency: Zimbabwean dollar
-Time zone: UTC, +2, (, CAT, [12], )
-Driving side: left
-Calling code: +263
-ISO 3166 code: ZW
-Internet TLD: .zw
-
-This is a good place to start workin on patches
+• 2019 estimate: 210,147,125, [6], (, 6th, )
+• Density: 25/km, 2, (64.7/sq mi) (, 200th, )
+GDP, (, PPP, ): 2020 estimate
+• Total: $3.078 trillion, [7], (, 8th, )
+• Per capita: $14,563, [7], (, 83rd, )
+GDP, (nominal): 2020 estimate
+• Total: $1.363 trillion, [7], (, 12th, )
+• Per capita: $6,450, [7], (, 83rd, )
+Gini, (2018): 53.9, [8], high, ·, 10th
+HDI, (2019): 0.765, [9], high, ·, 84th
+Currency: Real, (R$) (, BRL, )
+Time zone: UTC, −2 to −5, (, BRT, )
+Date format: dd/mm/yyyy (, CE, )
+Driving side: right
+Calling code: +55
+ISO 3166 code: BR
+Internet TLD: .br
