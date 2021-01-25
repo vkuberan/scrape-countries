@@ -74,10 +74,10 @@ for country, values in list_of_all_countries.items():
     country_details = get_country_details(
         project_dirs, 'wiki', data, data_file)
 
-    # time.sleep(1)
+    time.sleep(1)
 
-    if iCnt >= 180:
-        input("Press any key to continue...")
+    # if iCnt >= 180:
+    #     input("Press any key to continue...")
 
     iCnt += 1
     clear_screen()
