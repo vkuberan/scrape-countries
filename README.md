@@ -1,2 +1,2 @@
 # Scrape Countries Details
-Scrape pieces of information like the president, population, GDP, etc., from the 'Member Nations of UN'  wiki page and store that data in a JSON file using Python's requests &amp; Beautiful Soup modules.
+For a fun project, I had to get details like the President, Capital city, population, GDP, etc., of every individual 'Member states of the United Nations' It is time-consuming to get these data manually. So I thought it was better to write a simple program using Python to get these data.
