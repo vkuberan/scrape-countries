@@ -49,18 +49,22 @@ msg = "Extracting countries list from Wikipedia Source: {}".format(
 
 print_char_under_string(msg, '-')
 
-# fetch data from wiki source
-data = fetch_data(project_dirs, wiki_countries_source, 'all-countries.html')
+html_file_to_save = '/'.join([project_dirs['html_dir'], 'all-countries.html'])
+
+# fetch data from the source
+data = fetch_data(wiki_countries_source, html_file_to_save)
+
+json_file_to_save = '/'.join([project_dirs['data_dir'], 'all-countries.json'])
 
 # parse the data to get list of all countries
 list_of_all_countries = get_list_of_all_countries(
-    project_dirs, 'wiki', data, 'all-countries.json')
+    'wiki', data, json_file_to_save)
 
 iCnt = 1
 for country, values in list_of_all_countries.items():
     date_joined = values[2]
     link_source = '/'.join(['https://en.wikipedia.org', values[1]])
-    html_file = values[3]
+    html_file_to_save = '/'.join([project_dirs['html_dir'], values[3]])
     data_file = values[4]
 
     msg = "{:<3}: '{}' Joined on {}, Wiki Source: {}".format(
@@ -69,7 +73,7 @@ for country, values in list_of_all_countries.items():
     print_char_under_string(msg, '-', '\n\n')
 
     # fetch data from wiki source
-    data = fetch_data(project_dirs, link_source, html_file)
+    data = fetch_data(link_source, html_file_to_save)
 
     country_details = get_country_details(
         project_dirs, 'wiki', data, data_file)

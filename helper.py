@@ -55,18 +55,18 @@ def create_related_dirs(project_dirs):
             os.makedirs(dirpath)
 
 
-def fetch_data(project_dirs, link_source, html_file):
-    html_file = '/'.join([project_dirs['html_dir'], html_file])
+def fetch_data(link_source, html_file_to_save):
+
     html_source = ''
     try:
-        with open(html_file, 'rb') as hs:
+        with open(html_file_to_save, 'rb') as hs:
             html_source = hs.read().decode("UTF-16")
             print_char_under_string(
                 "Fetching info from the crawled file.", '-', '\n')
     except Exception as e:
         errno, errmsg = e.args
         errmsg = 'Error: ' + errmsg + \
-            ". Creating new file {}.".format(html_file)
+            ". Creating new file {}.".format(html_file_to_save)
         print_char_under_string(errmsg, '*', '\n\n')
         print_char_under_string(
             "Fetching data from the server using request.", '-', '\n')
@@ -82,7 +82,7 @@ def fetch_data(project_dirs, link_source, html_file):
             # print(response.headers)
 
             html_source = response.text
-            with open(html_file, mode='w', encoding='UTF-16') as f:
+            with open(html_file_to_save, mode='w', encoding='UTF-16') as f:
                 f.write(response.text)
 
         except Exception as e:
@@ -92,8 +92,8 @@ def fetch_data(project_dirs, link_source, html_file):
 
 
 # parse strategy is based on the source.
-def get_list_of_all_countries(project_dirs, source, data, data_file):
-    data_file = '/'.join([project_dirs['data_dir'], data_file])
+def get_list_of_all_countries(source, data, data_file):
+
     soup = BeautifulSoup(data, "lxml")
     countries_data = {}
 
