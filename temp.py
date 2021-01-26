@@ -1,3 +1,9 @@
+countries = 'India'
+print(countries.split(',')[0])
+
+exit()
+
+
 def wiki_replace_unicode(wiki_string, list_of_replacements):
     for key, val in list_of_replacements.items():
         wiki_string = wiki_string.replace(key, val)
@@ -13,7 +19,7 @@ print(abc)
 
 lp = {
     u'\u00b0': ' Dec ',
-    u'\u2032': ' Min '
+    u'\u2032': ' M '
 }
 
 degrees = ' Degrees '

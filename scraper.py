@@ -86,7 +86,7 @@ for country, values in list_of_all_countries.items():
     # input("\n\nPress any key to continue....")
 
     # if iCnt >= 80:
-    #     input("Press any key to continue...")
+    input("Press any key to continue...")
 
     iCnt += 1
     # time.sleep(1)

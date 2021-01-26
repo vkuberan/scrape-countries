@@ -65,8 +65,8 @@ def fetch_data(link_source, html_file_to_save):
                 "Fetching info from the crawled file.", '-', '\n')
     except Exception as e:
         errno, errmsg = e.args
-        errmsg = 'Error: ' + errmsg + \
-            ". Creating new file {}.".format(html_file_to_save)
+        errmsg = "Error({}): {}, Creating new file {}.".format(
+            errno, errmsg, html_file_to_save)
         print_char_under_string(errmsg, '*', '\n\n')
         print_char_under_string(
             "Fetching data from the server using request.", '-', '\n')
@@ -152,10 +152,10 @@ def get_country_details(project_dirs, source, data, data_file):
             lftData = detail.find("th")
             rgtData = detail.find("td")
 
-            if (lftData != None and rgtData != None):
+            if (lftData is not None and rgtData is not None):
 
                 style_tag = rgtData.style
-                if style_tag != None:
+                if style_tag is not None:
                     style_tag.decompose()
                 # •
 
@@ -165,8 +165,10 @@ def get_country_details(project_dirs, source, data, data_file):
                     separator=', ', strip=True)
 
                 if detail.find("div", class_='country-name'):
+
                     country_data['Country Name'] = detail.find(
-                        "div", class_='country-name').get_text(separator=", ", strip=True)
+                        "div", class_='country-name').get_text(
+                            separator=", ", strip=True)
 
                 if 'Capital' in lftData:
                     capital_city, largest_city = wiki_parse_capital_city(
@@ -182,13 +184,10 @@ def get_country_details(project_dirs, source, data, data_file):
 
             else:
                 if lftData:
-
                     if lftData.find("div", class_='country-name'):
-                        # to get the entire text separated by commna (or any char) of an element
-                        # data = lftData.get_text(
-                        #     separator=", ", strip=True)
                         country_data['Country Name'] = lftData.find(
-                            "div", class_='country-name').get_text(separator=", ", strip=True)
+                            "div", class_='country-name').get_text(
+                                separator=", ", strip=True)
                     else:
                         data = lftData.get_text(
                             separator=", ", strip=True)
