@@ -1,42 +1,36 @@
-Capital, and largest city: Algiers, 36°42′N, 3°13′E, ﻿ / ﻿, 36.700°N 3.217°E, ﻿ /, 36.700; 3.217
-Official languages: Arabic, •, Berber
-Other languages: Algerian Arabic, (Darja), (lingua franca), French, (administration, business and education), [3]
-Ethnic groups: Arab-Berber, 99%, [3], [a], 1% Others, [3]
-Religion: 99%, Islam, (official), 1% other (inc., Christians, and, Jews, ), [3]
-Demonym(s): Algerian
-Government: Unitary, semi-presidential, constitutional republic
-•, President: Abdelmadjid Tebboune
-•, Prime Minister: Abdelaziz Djerad
-•, Council President: Salah Goudjil, (interim)
-•, Assembly President: Slimane Chenine
+Capital, and largest city: St. John's, 17°7′N, 61°51′W, ﻿ / ﻿, 17.117°N 61.850°W, ﻿ /, 17.117; -61.850
+Official languages: English
+Vernacular language: Antiguan and Barbudan Creole
+Ethnic groups, (2013): 91%, African (Black), 4.4%, Multiracial, 1.7%, European (White), 2.9% Other
+Religion, (2011, [1], ): 76.5%, Christianity, 12.1%, Other, 5.9%, No religion, 5.5% Unspecified
+Demonym(s): Antiguan, Barbudan
+Government: Unitary, parliamentary, constitutional monarchy
+•, Monarch: Elizabeth II
+•, Governor-General: Sir Rodney Williams
+•, Prime Minister: Gaston Browne
 Legislature: Parliament
-•, Upper house: Council of the Nation
-•, Lower house: People's National Assembly
-Formation
-•, Zirid dynasty: 972
-•, Hammadid dynasty: 1015
-•, Zayyanid dynasty: 1236
-•, Al Jazâ'ir: 1516
-•, French Occupation: 5 July 1830
-•, Independence, from France: 5 July 1962
+•, Upper house: Senate
+•, Lower house: House of Representatives
+Independence
+•, Associated State: 27 February 1967
+• from the United Kingdom: 1 November 1981
 Area
-• Total: 2,381,741 km, 2, (919,595 sq mi) (, 10th, )
-• Water (%): 1.1
+• Total: 440 km, 2, (170 sq mi) (, 182nd, )
+• Water (%): negligible
 Population
-• 2021 estimate: 44,700,000, [4], (, 32nd, )
-• Density: 17.7/km, 2, (45.8/sq mi) (, 168, )
+• 2018 estimate: 96,286, [2], [3], (, 201st, )
+• 2011 census: 81,799
+• Density: 186/km, 2, (481.7/sq mi)
 GDP, (, PPP, ): 2019 estimate
-• Total: $684.649 billion, [5], (, 35th, )
-• Per capita: $15,765, [5], (, 82nd, )
+• Total: $2.731 billion
+• Per capita: $29,298, [4]
 GDP, (nominal): 2019 estimate
-• Total: $183.687 billion, [5], (, 53rd, )
-• Per capita: $4,229, [5], (, 109th, )
-Gini, (2011): 27.6, [6], [7], low
-HDI, (2019): 0.748, [8], high, ·, 91st
-Currency: Algerian dinar, (, DZD, )
-Time zone: UTC, +1, (, CET, )
-Date format: dd/mm/yyyy
-Driving side: right
-Calling code: +213
-ISO 3166 code: DZ
-Internet TLD: .dz, الجزائر.
+• Total: $1.717 billion
+• Per capita: $18,416, [4]
+HDI, (2019): 0.778, [5], high, ·, 78th
+Currency: East Caribbean dollar, (, XCD, )
+Time zone: UTC, -4, (, AST, )
+Driving side: left
+Calling code: +1-268
+ISO 3166 code: AG
+Internet TLD: .ag

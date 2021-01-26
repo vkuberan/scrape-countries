@@ -1,6 +1,6 @@
 # A small scraper used to scrape 'member countries of united nations'
-# from wikipedia and saves important informations like president,
-# population, gdp, etc., in a json file.
+# from wikipedia and extract informations like the president, population,
+# gdp, etc., and saved that in a json file.
 # Wiki: 'https://en.wikipedia.org/wiki/Member_states_of_the_United_Nations'
 
 from helper import *
@@ -60,6 +60,10 @@ json_file_to_save = '/'.join([project_dirs['data_dir'], 'all-countries.json'])
 list_of_all_countries = get_list_of_all_countries(
     'wiki', data, json_file_to_save)
 
+# pretty_countries_list = json.dumps(list_of_all_countries, indent=2)
+# print(pretty_countries_list)
+# input("\n\nPress any key to continue....")
+
 iCnt = 1
 for country, values in list_of_all_countries.items():
     date_joined = values[2]
@@ -78,10 +82,12 @@ for country, values in list_of_all_countries.items():
     country_details = get_country_details(
         project_dirs, 'wiki', data, data_file)
 
-    time.sleep(1)
+    print(json.dumps(country_details, indent=2))
+    # input("\n\nPress any key to continue....")
 
-    # if iCnt >= 180:
+    # if iCnt >= 80:
     #     input("Press any key to continue...")
 
     iCnt += 1
+    # time.sleep(1)
     clear_screen()

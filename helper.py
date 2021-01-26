@@ -138,7 +138,7 @@ def get_country_details(project_dirs, source, data, data_file):
     soup = BeautifulSoup(data, "lxml")
 
     country_data = {}
-    culprit_found = False
+
     if source == 'wiki':
         details = soup.find('table', class_='infobox geography vcard').find(
             "tbody").find_all("tr")
@@ -167,7 +167,6 @@ def get_country_details(project_dirs, source, data, data_file):
                 if detail.find("div", class_='country-name'):
                     country_data['Country Name'] = detail.find(
                         "div", class_='country-name').get_text(separator=", ", strip=True)
-                    culprit_found = True
 
                 if 'Capital' in lftData:
                     capital_city, largest_city = wiki_parse_capital_city(
@@ -196,8 +195,7 @@ def get_country_details(project_dirs, source, data, data_file):
                         msg += data + '\n'
                         print(data)
 
-        print(country_data)
-        if culprit_found == True:
-            input("Country name is not found. But we caught him redhanded...")
-        with open('data-dump.txt', 'wb') as cd:
-            cd.write(msg.encode())
+        # with open('data-dump.txt', 'wb') as cd:
+        #     cd.write(msg.encode())
+
+    return country_data
