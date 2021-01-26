@@ -5,6 +5,10 @@ def wiki_replace_unicode(wiki_string, list_of_replacements):
     return wiki_string
 
 
+def wiki_parse_country(lftData, country_info):
+    pass
+
+
 def wiki_parse_capital_city(lftData, city_info):
     ret_capital = ''
     ret_largest = ''
