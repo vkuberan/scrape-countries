@@ -79,15 +79,17 @@ for country, values in list_of_all_countries.items():
     # fetch data from wiki source
     data = fetch_data(link_source, html_file_to_save)
 
-    country_details = get_country_details(
+    country_name, country_details = get_country_details(
         project_dirs, 'wiki', data, data_file)
 
     print(json.dumps(country_details, indent=2))
     # input("\n\nPress any key to continue....")
 
-    # if iCnt >= 80:
-    input("Press any key to continue...")
+    # if iCnt == 150 or iCnt == 164:
+    #     print("Need to fix these items")
+    #     input("Press any key to continue...")
 
     iCnt += 1
-    # time.sleep(1)
+    time.sleep(1)
+
     clear_screen()

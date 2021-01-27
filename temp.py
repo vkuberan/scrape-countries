@@ -1,7 +1,32 @@
-countries = 'India'
-print(countries.split(',')[0])
+# import module
+from bs4 import BeautifulSoup
+
+# URL for scrapping data
+markup = '<div style="display:inline" class="fn org country-name">\
+Democratic Republic of<br /> São Tomé and Príncipe <i>unwanted thing</i></div>'
+
+# get URL html
+lftData = BeautifulSoup(markup, 'lxml')
+
+print(lftData)
+# <div style="display:inline" class="fn org country-name">Democratic Republic of <br />São Tomé and Príncipe <i>unwanted thing</i></div>
+
+for br_tag in lftData("br"):
+    lftData.br.unwrap()
+
+print(lftData)
+
+# <div style="display:inline" class="fn org country-name">Democratic Republic of São Tomé and Príncipe <i>unwanted thing</i></div>
+
+country_name = BeautifulSoup(str(lftData), 'lxml').get_text(
+    separator=", ", strip=True).split(', ')[0]
+
+print(country_name)
+
+# Democratic Republic of
 
 exit()
+# lftData = BeautifulSoup(str(lftData), 'lxml')
 
 
 def wiki_replace_unicode(wiki_string, list_of_replacements):

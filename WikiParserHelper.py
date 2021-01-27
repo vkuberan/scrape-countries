@@ -1,3 +1,6 @@
+from bs4 import BeautifulSoup
+
+
 def wiki_replace_unicode(wiki_string, list_of_replacements):
     for key, val in list_of_replacements.items():
         wiki_string = wiki_string.replace(key, val)
@@ -5,8 +8,27 @@ def wiki_replace_unicode(wiki_string, list_of_replacements):
     return wiki_string
 
 
-def wiki_parse_country(lftData, country_info):
-    pass
+def wiki_parse_country(lftData):
+
+    lftData = lftData.find("div", class_='country-name')
+
+    for br_tag in lftData("br"):
+        lftData.br.unwrap()
+
+    lftData = BeautifulSoup(str(lftData), 'lxml')
+
+    country_name = lftData.get_text(separator=", ", strip=True)
+
+    # some filter conditions
+    # São Tomé and Príncipe
+    if "ofS" in country_name:
+        country_name = country_name.replace("ofS", "of S")
+    elif "Sri Lanka" in country_name:
+        country_name = country_name.replace(",", "")
+    else:
+        country_name = country_name.split(",")[0]
+
+    return country_name
 
 
 def wiki_parse_capital_city(lftData, city_info):

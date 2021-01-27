@@ -165,7 +165,12 @@ def get_country_details(project_dirs, source, data, data_file):
                     separator=', ', strip=True)
 
                 if detail.find("div", class_='country-name'):
-                    country_data['Country Name'] = wiki_parse_country(detail)
+
+                    country_data['Country Name'] = wiki_parse_country(
+                        detail.find(
+                            "div", class_='country-name').get_text(
+                                separator=", ", strip=True)
+                    )
 
                 if 'Capital' in lftData:
                     capital_city, largest_city = wiki_parse_capital_city(
@@ -183,7 +188,10 @@ def get_country_details(project_dirs, source, data, data_file):
                 if lftData:
                     if lftData.find("div", class_='country-name'):
                         country_data['Country Name'] = wiki_parse_country(
-                            lftData)
+                            lftData.find(
+                                "div", class_='country-name').get_text(
+                                    separator=', ', strip=True
+                            ))
                     else:
                         data = lftData.get_text(
                             separator=", ", strip=True)
