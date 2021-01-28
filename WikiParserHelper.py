@@ -1,3 +1,4 @@
+import re
 from bs4 import BeautifulSoup
 
 
@@ -59,7 +60,6 @@ def wiki_parse_capital_city(lftData, city_info):
     lat = ''
     lon = ''
 
-    print(clean_city_info)
     if len(clean_city_info) == 1:
         capital_city = clean_city_info[0]
     elif len(clean_city_info) >= 3:
@@ -73,7 +73,38 @@ def wiki_parse_capital_city(lftData, city_info):
         'latitude': lat, 'longitude': lon}]
 
     if 'largest city' in lftData:
-        ret_largest = [capital_city, {
-            'latitude': lat, 'longitude': lon}]
+        ret_largest = capital_city
 
     return ret_capital, ret_largest
+
+
+def wiki_clean_left_side(lft):
+    # replacble chars
+    lp = {
+        '•': ''
+    }
+
+    is_child = 0  # 0 if parent, 1 is child
+
+    if '•' in lft:
+        is_child = 1
+        lft = wiki_replace_unicode(lft, lp).split(',')
+        if len(lft) >= 2:
+            lft = ' '.join(lft[1:])
+        else:
+            lft = lft[0]
+
+    lft = wiki_replace_unicode(lft, {'\u00a0': ' '}).strip()
+
+    return lft, is_child
+
+
+def wiki_clean_right_side(rgt):
+    lp = {
+        '\u00a0': ' ',
+        '\u00b7': ' '
+    }
+
+    rgt = wiki_replace_unicode(rgt, lp).strip()
+    rgt = re.sub(r'\[.*\]', '', rgt)
+    return rgt

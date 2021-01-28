@@ -1,29 +1,7 @@
-# import module
-from bs4 import BeautifulSoup
-
-# URL for scrapping data
-markup = '<div style="display:inline" class="fn org country-name">\
-Democratic Republic of<br /> São Tomé and Príncipe <i>unwanted thing</i></div>'
-
-# get URL html
-lftData = BeautifulSoup(markup, 'lxml')
-
-print(lftData)
-# <div style="display:inline" class="fn org country-name">Democratic Republic of <br />São Tomé and Príncipe <i>unwanted thing</i></div>
-
-for br_tag in lftData("br"):
-    lftData.br.unwrap()
-
-print(lftData)
-
-# <div style="display:inline" class="fn org country-name">Democratic Republic of São Tomé and Príncipe <i>unwanted thing</i></div>
-
-country_name = BeautifulSoup(str(lftData), 'lxml').get_text(
-    separator=", ", strip=True).split(', ')[0]
-
-print(country_name)
-
-# Democratic Republic of
+languages = '•, Pashto, [1], •, Dari Persian'.split(',')
+languages = [x.strip()
+             for x in languages if all(y.isalpha() or y.isspace() for y in x)]
+print(languages)
 
 exit()
 # lftData = BeautifulSoup(str(lftData), 'lxml')

@@ -150,8 +150,6 @@ def get_country_details(project_dirs, source, data, data_file):
         curr = ''
         parent = ''
         msg = ''
-
-        # holds the values of the childrens
         child = {}
 
         iCnt = 0
@@ -186,20 +184,15 @@ def get_country_details(project_dirs, source, data, data_file):
                 # wether it is a parent or not
                 lft, is_child = wiki_clean_left_side(lftData)
 
-                # print('Inside both: ', lft, is_child)
+                # print(lft, is_child)
 
                 # switch the parents here
                 if is_child == 0:
                     if 'Capital' not in lftData:
-                        if len(child) == 1:
-                            country_data[curr] = child[next(iter(child))]
-                        else:
-                            country_data[curr] = child
                         prev, curr = curr, lft
-                        child = {}
                         prt = "{} changing parent '{}' to '{}'".format(
                             iCnt, prev, curr)
-                        # print(prt)
+                        print(prt)
 
                 if detail.find("div", class_='country-name'):
                     country_data['Country Name'] = wiki_parse_country(detail)
@@ -217,12 +210,16 @@ def get_country_details(project_dirs, source, data, data_file):
                     if largest_city != '':
                         country_data['Largest City'] = largest_city
 
+                # msg += lftData + ': ' + rgtData + '\n'
+                # print(lftData + ': ' + rgtData)
+
                 elif 'Largest city' in lftData:
                     country_data['Largest City'] = rgtData.split(',')[0]
 
                 else:
-                    child[lft] = wiki_clean_right_side(rgtData)
-                    # print(child)
+                    lft = wiki_clean_left_side(lftData)
+                    # print(lft)
+                    country_data[curr] = rgtData
             else:
                 if lftData:
                     if lftData.find("div", class_='country-name'):
@@ -231,23 +228,17 @@ def get_country_details(project_dirs, source, data, data_file):
                     else:
                         data = lftData.get_text(
                             separator=", ", strip=True)
-
+                        # msg += data + '\n'
                         lft, is_child = wiki_clean_left_side(data)
 
-                        # print(lft, is_child)
+                        print(lft, is_child)
 
                         if is_child == 0:
                             if 'Capital' not in lftData:
-                                if len(child) == 1:
-                                    country_data[curr] = child[next(
-                                        iter(child))]
-                                else:
-                                    country_data[curr] = child
                                 prev, curr = curr, lft
-                                child = {}
                                 prt = "{} changing parent '{}' to '{}'".format(
                                     iCnt, prev, curr)
-                                # print(prt)
+                                print(prt)
 
         # with open('data-dump.txt', 'wb') as cd:
         #     cd.write(msg.encode())

@@ -86,10 +86,11 @@ for country, values in list_of_all_countries.items():
     # input("\n\nPress any key to continue....")
 
     # if iCnt == 150 or iCnt == 164:
-    #     print("Need to fix these items")
-    #     input("Press any key to continue...")
+    if country == 'India':
+        print("Need to fix these items")
+        input("Press any key to continue...")
 
     iCnt += 1
-    time.sleep(1)
-
+    # time.sleep(2)
+    # input("Press any key to continue...")
     clear_screen()

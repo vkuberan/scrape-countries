@@ -1,36 +1,44 @@
-Capital, and largest city: St. John's, 17°7′N, 61°51′W, ﻿ / ﻿, 17.117°N 61.850°W, ﻿ /, 17.117; -61.850
-Official languages: English
-Vernacular language: Antiguan and Barbudan Creole
-Ethnic groups, (2013): 91%, African (Black), 4.4%, Multiracial, 1.7%, European (White), 2.9% Other
-Religion, (2011, [1], ): 76.5%, Christianity, 12.1%, Other, 5.9%, No religion, 5.5% Unspecified
-Demonym(s): Antiguan, Barbudan
-Government: Unitary, parliamentary, constitutional monarchy
-•, Monarch: Elizabeth II
-•, Governor-General: Sir Rodney Williams
-•, Prime Minister: Gaston Browne
-Legislature: Parliament
-•, Upper house: Senate
-•, Lower house: House of Representatives
-Independence
-•, Associated State: 27 February 1967
-• from the United Kingdom: 1 November 1981
+Capital, and largest city: Kabul, 33°N, 65°E, ﻿ / ﻿, 33°N 65°E, ﻿ /, 33; 65, Coordinates, :, 33°N, 65°E, ﻿ / ﻿, 33°N 65°E, ﻿ /, 33; 65
+Official language, (s): •, Pashto, [1], •, Dari Persian
+Ethnic groups: 42%, Pashtun, 27%, Tajik, 9%, Hazara, 9%, Uzbek, 4%, Aimaq, 3%, Turkmen, 2%, Baloch, 4%, others, [2]
+Religion: 99%, Islam, (, official, ), 1%, other
+Demonym(s): Afghan, [Note 1], [5], [6]
+Government: Unitary, presidential, Islamic republic
+•, President: Ashraf Ghani
+•, 1st Vice President: Amrullah Saleh
+•, 2nd Vice President: Sarwar Danish
+Legislature: National Assembly
+•, Upper house: House of Elders
+•, Lower house: House of the People
+Formation
+•, Khalji Dynasty: 1290
+•, Lodi Dynasty: 1451
+•, Sur Empire: 1540
+•, Ghilzai Hotak Empire: 1709
+•, Durrani Empire: 1747
+•, Barakzai Emiri Emirate: 1823
+•, Recognised: 19 August 1919
+•, Kingdom Founded, Muṣāḥiban Dynasty: 1926
+•, Declaration of Republic: 1973
+• Admission into the, UN: 1946
 Area
-• Total: 440 km, 2, (170 sq mi) (, 182nd, )
+• Total: 652,230, [7], km, 2, (251,830 sq mi) (, 40th, )
 • Water (%): negligible
 Population
-• 2018 estimate: 96,286, [2], [3], (, 201st, )
-• 2011 census: 81,799
-• Density: 186/km, 2, (481.7/sq mi)
-GDP, (, PPP, ): 2019 estimate
-• Total: $2.731 billion
-• Per capita: $29,298, [4]
-GDP, (nominal): 2019 estimate
-• Total: $1.717 billion
-• Per capita: $18,416, [4]
-HDI, (2019): 0.778, [5], high, ·, 78th
-Currency: East Caribbean dollar, (, XCD, )
-Time zone: UTC, -4, (, AST, )
-Driving side: left
-Calling code: +1-268
-ISO 3166 code: AG
-Internet TLD: .ag
+• 2019 estimate: 32,225,560, [8], (, 44th, )
+• Density: 46/km, 2, (119.1/sq mi) (, 174th, )
+GDP, (, PPP, ): 2018 estimate
+• Total: $72.911 billion, [9], (, 96th, )
+• Per capita: $2,024, [9], (, 169th, )
+GDP, (nominal): 2018 estimate
+• Total: $21.657 billion, [9], (, 111st, )
+• Per capita: $601, [9], (, 177th, )
+Gini, (2008): 27.8, [10], low, ·, 1st
+HDI, (2019): 0.511, [11], low, ·, 169th
+Currency: Afghani, (افغانی) (, AFN, )
+Time zone: UTC, +4:30, Solar Calendar, (D†)
+Date format: dd-mm-yyyy
+Driving side: right
+Calling code: +93
+ISO 3166 code: AF
+Internet TLD: .af, افغانستان.
