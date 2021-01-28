@@ -60,16 +60,12 @@ json_file_to_save = '/'.join([project_dirs['data_dir'], 'all-countries.json'])
 list_of_all_countries = get_list_of_all_countries(
     'wiki', data, json_file_to_save)
 
-# pretty_countries_list = json.dumps(list_of_all_countries, indent=2)
-# print(pretty_countries_list)
-# input("\n\nPress any key to continue....")
-
 iCnt = 1
 for country, values in list_of_all_countries.items():
     date_joined = values[2]
     link_source = '/'.join(['https://en.wikipedia.org', values[1]])
     html_file_to_save = '/'.join([project_dirs['html_dir'], values[3]])
-    data_file = values[4]
+    data_file = '/'.join([project_dirs['data_dir'], values[4]])
 
     msg = "{:<3}: '{}' Joined on {}, Wiki Source: {}".format(
         iCnt, country, date_joined, link_source)
@@ -80,7 +76,7 @@ for country, values in list_of_all_countries.items():
     data = fetch_data(link_source, html_file_to_save)
 
     country_name, country_details = get_country_details(
-        project_dirs, 'wiki', data, data_file)
+        'wiki', data, data_file)
 
     print(json.dumps(country_details, indent=2))
     # input("\n\nPress any key to continue....")
@@ -92,5 +88,5 @@ for country, values in list_of_all_countries.items():
 
     iCnt += 1
     # time.sleep(2)
-    # input("Press any key to continue...")
+    input("Press any key to continue...")
     clear_screen()

@@ -106,5 +106,5 @@ def wiki_clean_right_side(rgt):
     }
 
     rgt = wiki_replace_unicode(rgt, lp).strip()
-    rgt = re.sub(r'\[.*\]', '', rgt)
+    # rgt = re.sub(r'\[.*\]', '', rgt)
     return rgt

@@ -133,125 +133,144 @@ def get_list_of_all_countries(source, data, data_file):
 
 
 # get individual countries details
-def get_country_details(project_dirs, source, data, data_file):
-    data_file = '/'.join([project_dirs['data_dir'], data_file])
-    soup = BeautifulSoup(data, "lxml")
+def get_country_details(source, data, data_file):
 
     country_data = {}
 
-    if source == 'wiki':
-        details = soup.find('table', class_='infobox geography vcard').find(
-            "tbody").find_all("tr")
+    try:
+        with open(data_file, 'rb') as df:
+            print_char_under_string(
+                "Fetching info from {}.".format(data_file), '-', '\n')
+            country_data = json.load(df)
 
-        # remove style tag inside the table contents
-        # details = details.style.decompose()
+    except Exception as e:
+        errno, errmsg = e.args
+        errmsg = "Error({}): {}, Creating new file {}.".format(
+            errno, errmsg, data_file)
+        print_char_under_string(errmsg, '*', '\n\n')
 
-        prev = ''
-        curr = ''
-        parent = ''
-        msg = ''
+        soup = BeautifulSoup(data, "lxml")
 
-        # holds the values of the childrens
-        child = {}
+        country_data = {}
 
-        iCnt = 0
+        if source == 'wiki':
+            details = soup.find('table', class_='infobox geography vcard').find(
+                "tbody").find_all("tr")
 
-        for detail in details:
+            # remove style tag inside the table contents
+            # details = details.style.decompose()
 
-            # This section 'infobox geography vcard' is divided into two
-            # clean sides (left and right). On the left side it have the
-            # common names like president, population, gdp etc., on the right
-            # side it containts the actual name of the president, actual value
-            # of the population or the gdp values
-            lftData = detail.find("th")
-            rgtData = detail.find("td")
+            prev = ''
+            curr = ''
+            parent = ''
+            msg = ''
 
-            # keep the counter to track the iteration
-            iCnt += 1
+            # holds the values of the childrens
+            child = {}
 
-            # left and right, both have some values
-            if (lftData is not None and rgtData is not None):
+            iCnt = 0
 
-                style_tag = rgtData.style
+            for detail in details:
 
-                if style_tag is not None:
-                    style_tag.decompose()
+                # This section 'infobox geography vcard' is divided into two
+                # clean sides (left and right). On the left side it have the
+                # common names like president, population, gdp etc., on the
+                # right side it containts the actual name of the president,
+                # actual value of the population or the gdp values
+                lftData = detail.find("th")
+                rgtData = detail.find("td")
 
-                lftData = detail.find("th").get_text(
-                    separator=', ', strip=True)
-                rgtData = detail.find("td").get_text(
-                    separator=', ', strip=True)
+                # keep the counter to track the iteration
+                iCnt += 1
 
-                # get the cleaned text along with the information
-                # wether it is a parent or not
-                lft, is_child = wiki_clean_left_side(lftData)
+                # left and right, both have some values
+                if (lftData is not None and rgtData is not None):
 
-                # print('Inside both: ', lft, is_child)
+                    style_tag = rgtData.style
 
-                # switch the parents here
-                if is_child == 0:
-                    if 'Capital' not in lftData:
-                        if len(child) == 1:
-                            country_data[curr] = child[next(iter(child))]
-                        else:
-                            country_data[curr] = child
-                        prev, curr = curr, lft
-                        child = {}
-                        prt = "{} changing parent '{}' to '{}'".format(
-                            iCnt, prev, curr)
-                        # print(prt)
+                    if style_tag is not None:
+                        style_tag.decompose()
 
-                if detail.find("div", class_='country-name'):
-                    country_data['Country Name'] = wiki_parse_country(detail)
+                    lftData = detail.find("th").get_text(
+                        separator=', ', strip=True)
+                    rgtData = detail.find("td").get_text(
+                        separator=', ', strip=True)
 
-                # set prev & current parent to the same value
-                # because hereafter we encounter a pattern that can be
-                # exploited by our code
-                if 'Capital' in lftData:
-                    prev = curr = lft
-                    capital_city, largest_city = wiki_parse_capital_city(
-                        lftData, rgtData[0:rgtData.find("/")])
+                    # get the cleaned text along with the information
+                    # wether it is a parent or not
+                    lft, is_child = wiki_clean_left_side(lftData)
 
-                    country_data['Capital City'] = capital_city
+                    # print('Inside both: ', lft, is_child)
 
-                    if largest_city != '':
-                        country_data['Largest City'] = largest_city
+                    # switch the parents here
+                    if is_child == 0:
+                        if 'Capital' not in lftData:
+                            if len(child) == 1:
+                                country_data[curr] = child[next(iter(child))]
+                            else:
+                                country_data[curr] = child
+                            prev, curr = curr, lft
+                            child = {}
+                            prt = "{} changing parent '{}' to '{}'".format(
+                                iCnt, prev, curr)
+                            # print(prt)
 
-                elif 'Largest city' in lftData:
-                    country_data['Largest City'] = rgtData.split(',')[0]
-
-                else:
-                    child[lft] = wiki_clean_right_side(rgtData)
-                    # print(child)
-            else:
-                if lftData:
-                    if lftData.find("div", class_='country-name'):
+                    if detail.find("div", class_='country-name'):
                         country_data['Country Name'] = wiki_parse_country(
-                            lftData)
+                            detail)
+
+                    # set prev & current parent to the same value
+                    # because hereafter we encounter a pattern that can be
+                    # exploited by our code
+                    if 'Capital' in lftData:
+                        prev = curr = lft
+                        capital_city, largest_city = wiki_parse_capital_city(
+                            lftData, rgtData[0:rgtData.find("/")])
+
+                        country_data['Capital City'] = capital_city
+
+                        if largest_city != '':
+                            country_data['Largest City'] = largest_city
+
+                    elif 'Largest city' in lftData:
+                        country_data['Largest City'] = rgtData.split(',')[0]
+
                     else:
-                        data = lftData.get_text(
-                            separator=", ", strip=True)
+                        child[lft] = wiki_clean_right_side(rgtData)
+                        # print(child)
+                else:
+                    if lftData:
+                        if lftData.find("div", class_='country-name'):
+                            country_data['Country Name'] = wiki_parse_country(
+                                lftData)
+                        else:
+                            data = lftData.get_text(
+                                separator=", ", strip=True)
 
-                        lft, is_child = wiki_clean_left_side(data)
+                            lft, is_child = wiki_clean_left_side(data)
 
-                        # print(lft, is_child)
+                            # print(lft, is_child)
 
-                        if is_child == 0:
-                            if 'Capital' not in lftData:
-                                if len(child) == 1:
-                                    country_data[curr] = child[next(
-                                        iter(child))]
-                                else:
-                                    country_data[curr] = child
-                                prev, curr = curr, lft
-                                child = {}
-                                prt = "{} changing parent '{}' to '{}'".format(
-                                    iCnt, prev, curr)
-                                # print(prt)
+                            if is_child == 0:
+                                if 'Capital' not in lftData:
+                                    if len(child) == 1:
+                                        country_data[curr] = child[next(
+                                            iter(child))]
+                                    else:
+                                        country_data[curr] = child
+                                    prev, curr = curr, lft
+                                    child = {}
+                                    # prt = "{} changing parent \
+                                    # '{}' to '{}'".format(
+                                    #    iCnt, prev, curr)
+                                    # print(prt)
 
         # with open('data-dump.txt', 'wb') as cd:
         #     cd.write(msg.encode())
 
         # input("Press any key to continue...")
+
+        with open(data_file, 'w') as fp:
+            json.dump(country_data, fp)
 
     return country_data['Country Name'], country_data
