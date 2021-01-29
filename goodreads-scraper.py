@@ -42,7 +42,8 @@ authors = {
     'pushkin': 'https://www.goodreads.com/author/show/16070.Alexander_Pushkin',
     'leo-tolstoy': 'https://www.goodreads.com/author/show/128382.Leo_Tolstoy',
     'fyodor-dostoyevsky': 'https://www.goodreads.com/author/show/3137322.Fyodor_Dostoyevsky',
-    'jrr-tolkein': 'https://www.goodreads.com/author/show/656983.J_R_R_Tolkien'
+    'jrr-tolkein': 'https://www.goodreads.com/author/show/656983.J_R_R_Tolkien',
+    'paulo-coelho': 'https://www.goodreads.com/author/show/566.Paulo_Coelho'
 }
 
 for author_name, url in authors.items():
@@ -103,12 +104,14 @@ for author_name, url in authors.items():
         book_title = details[1].find(
             'a', class_='bookTitle').get_text(strip=True)
         book_rating = details[1].find(
-            'span', class_='minirating').get_text(strip=True).replace(
-                "\n\r", ' ').replace("\r\n", '')
+            'span', class_='minirating').get_text(strip=True)
+        book_rating = re.sub(r'(\\r|\\n)+', '', book_rating).strip()
         book_published = details[1].find(
-            'span', class_='minirating').nextSibling.replace("\r\n", '')
+            'span', class_='minirating').nextSibling
         book_published = re.sub(
-            ' +', ' ', book_published).strip().replace('—', '')
+            '(\\r|\\n| )', ' ', book_published).replace('—', '').strip()
+        book_published = re.sub(
+            ' +', ' ', book_published).replace('published', 'published in')
 
         # print(details[1])
         top_books_list[iCnt] = {
